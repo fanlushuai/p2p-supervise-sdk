@@ -1,19 +1,31 @@
 # p2p-supervise-sdk
 P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit封装
 
-## 注意
-下面pom的依赖。是官网的工具包。只是上传了自己的私服。请自行解决。
+## maven 配置
 
-~~~
-        <!-- 应急中心工具包-->
+  <dependencies>
+
         <dependency>
-            <groupId>org.cert</groupId>
-            <artifactId>supervise</artifactId>
-            <version>1.0.0</version>
-            <type>jar</type>
+            <groupId>com.open.sdk</groupId>
+            <artifactId>p2p-supervise-sdk</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-        
-~~~
+
+    </dependencies>
+
+    <repositories>
+
+        <repository>
+            <id>maven-repo</id>
+            <url>https://raw.githubusercontent.com/fanlushuai/maven-repo/master/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
 
 ## 使用
   参见test代码。配置自家apikey和sourceCode。即可使用。
