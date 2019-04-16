@@ -18,10 +18,6 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
         <repository>
             <id>maven-repo</id>
             <url>https://raw.githubusercontent.com/fanlushuai/maven-repo/master/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
         </repository>
 
     </repositories>
