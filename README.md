@@ -3,7 +3,7 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
 
 ## maven 配置
 
-  <dependencies>
+    <dependencies>
 
         <dependency>
             <groupId>com.open.sdk</groupId>
