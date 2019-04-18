@@ -1,5 +1,5 @@
 # p2p-supervise-sdk
-P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit封装
+P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit封装。非常方便的集成到spring里面
 
 ## maven 配置
 
@@ -8,7 +8,7 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
         <dependency>
             <groupId>com.open.sdk</groupId>
             <artifactId>p2p-supervise-sdk</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
         </dependency>
 
     </dependencies>
