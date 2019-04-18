@@ -2,7 +2,6 @@ package com.open.sdk.config;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.open.sdk.bean.user.DataTypeEnum;
 import com.open.sdk.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
@@ -40,16 +39,6 @@ public class ApiKeyGenerateInterceptor implements Interceptor {
 
     public ApiKeyGenerateInterceptor(ConfigStorage configStorage) {
         this.configStorage = configStorage;
-    }
-
-    /**
-     * 线上生产dataType用1，其他都用0
-     */
-    private DataTypeEnum getDataType(CNCRTEnv cncrtEnv) {
-        if (CNCRTEnv.ONLINE_PRODUCT.equals(cncrtEnv)) {
-            return DataTypeEnum.PRODUCT;
-        }
-        return DataTypeEnum.TEST;
     }
 
     /**
@@ -108,11 +97,10 @@ public class ApiKeyGenerateInterceptor implements Interceptor {
 
                 if (msgJsonObject.get(KEY_DATA_TYPE) == null) {
                     //dataType的设置。在没有设置的情况下，设置全局的环境变量
-                    DataTypeEnum dataTypeEnum = getDataType(configStorage.getCncrtEnv());
-                    msgJsonObject.addProperty(KEY_DATA_TYPE, dataTypeEnum.getValue());
+                    msgJsonObject.addProperty(KEY_DATA_TYPE, configStorage.getDataType().getValue());
                     keyValue[1] = URLEncoder.encode(msgJsonObject.toString(), "UTF-8");
                     setGlobalEnv = true;
-                    log.info("global env config {} add {} as dataType ", configStorage.getCncrtEnv(), dataTypeEnum);
+                    log.info("global env config {} add {} as dataType ", configStorage.getCncrtEnv(), configStorage.getDataType());
                 } else {
                     log.warn("!!!! use self define config {} as dataType ", msgJsonObject.get(KEY_DATA_TYPE).getAsString());
                 }

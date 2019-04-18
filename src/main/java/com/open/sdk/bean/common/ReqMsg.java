@@ -23,7 +23,7 @@ public class ReqMsg<T> {
         setVersion(configStorage.getVersion());
         setSourceCode(configStorage.getSourceCode());
         setSentTime(Util.getDateTimeStr());
-        setTimestamp(System.currentTimeMillis());
+        setTimestamp(System.currentTimeMillis() + "");
         setNonce(Util.genNonce());
         //
         setInfTypeEnum(infTypeEnum);
@@ -75,9 +75,12 @@ public class ReqMsg<T> {
     @Expose
     public DataTypeEnum dataType;
 
+    /**
+     * 这个类型文档中有Long和String。但是测试发现String类型就行。选择String来兼容批次查询接口
+     */
     @SerializedName("timestamp")
     @Expose
-    public long timestamp;
+    public String timestamp;
 
     @SerializedName("nonce")
     @Expose

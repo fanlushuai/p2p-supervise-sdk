@@ -6,11 +6,9 @@
 
     <groupId>com.open.sdk</groupId>
     <artifactId>p2p-supervise-sdk</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <version>1.0</version>
 
     <packaging>jar</packaging>
-
 
     <dependencies>
 
@@ -101,6 +99,19 @@
 
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>maven-repo</id>
+            <url>https://raw.githubusercontent.com/fanlushuai/maven-repo</url>
+
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
@@ -144,7 +155,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
 

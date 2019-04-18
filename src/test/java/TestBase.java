@@ -1,3 +1,4 @@
+import com.open.sdk.api.ReconciliationService;
 import com.open.sdk.api.UploadService;
 import com.open.sdk.config.ApiKeyGenerateInterceptor;
 import com.open.sdk.config.CNCRTEnv;
@@ -13,6 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
     UploadService uploadService;
+
+    ReconciliationService reconciliationService;
 
     /**
      * //todo 填自己公司的
@@ -63,6 +66,8 @@ public class TestBase {
                 .build();
 
         uploadService = retrofit.create(UploadService.class);
+        reconciliationService = retrofit.create(ReconciliationService.class);
+
     }
 
 
