@@ -8,6 +8,10 @@ import lombok.Data;
 @Builder
 @Data
 public class Transact {
+    
+    @SerializedName("version")
+    @Expose
+    public String version;
 
     @SerializedName("transTime")
     @Expose
