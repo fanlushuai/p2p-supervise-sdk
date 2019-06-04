@@ -8,7 +8,7 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
         <dependency>
             <groupId>com.open.sdk</groupId>
             <artifactId>p2p-supervise-sdk</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
 
     </dependencies>
@@ -27,7 +27,6 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
   参见test代码。配置自家apikey和sourceCode。即可使用。
   
   
-  
     @Value("${app.profile}")
     private String profile;
 
@@ -43,6 +42,9 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
     @Value("${cncrt.version}")
     private String version;
 
+    /**
+     * 所有配置参数就在这里
+     */
     @Bean
     public ConfigStorage configStorage() {
         return ConfigStorage.builder().apiKey(apiKey).host(host).sourceCode(sourceCode).version(version)
@@ -75,15 +77,23 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
                 .build();
     }
 
+    /**
+     * 注入接口服务类 
+     */
     @Bean
     public UploadService uploadService(Retrofit retrofit) {
         return retrofit.create(UploadService.class);
     }
 
+    /**
+     * 注入批次接口服务类 
+     */
     @Bean
     public ReconciliationService reconciliationService(Retrofit retrofit) {
         return retrofit.create(ReconciliationService.class);
     }
+   
+  
     
     
     
