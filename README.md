@@ -24,7 +24,7 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
 
 
 ## 使用
-  参见test代码。配置自家apikey和sourceCode。即可使用。
+  参见[test代码](https://github.com/fanlushuai/p2p-supervise-sdk/tree/master/src/test/java)。配置自家apikey和sourceCode。即可使用。
   
   
     @Value("${app.profile}")
