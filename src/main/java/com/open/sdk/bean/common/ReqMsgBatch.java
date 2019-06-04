@@ -3,9 +3,13 @@ package com.open.sdk.bean.common;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.open.sdk.bean.user.DataTypeEnum;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
+@Getter
+@Setter
+@ToString(callSuper = true)
 public class ReqMsgBatch extends ReqMsg {
 
     /**
