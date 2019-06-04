@@ -48,28 +48,16 @@ public interface UploadService {
     @POST("/p2p/transact/CNCRTEnvConfig")
     Call<Rsp> transaction(@Field("msg") String msg);
 
-    /**
-     * 开发中
-     */
-
     @FormUrlEncoded
-    @POST("/p2p/deving")
+    @POST("/p2p/lendProduct/CNCRTEnvConfig")
     Call<Rsp> product(@Field("msg") String msg);
 
-    /**
-     * 开发中
-     */
-
     @FormUrlEncoded
-    @POST("/p2p/deving")
+    @POST("/p2p/lendProductConfig/CNCRTEnvConfig")
     Call<Rsp> productConfig(@Field("msg") String msg);
 
-    /**
-     * 开发中
-     */
-
     @FormUrlEncoded
-    @POST("/p2p/deving")
-    Call<Rsp> invest(@Field("msg") String msg);
+    @POST("/p2p/lendParticulars/CNCRTEnvConfig")
+    Call<Rsp> lendParticulars(@Field("msg") String msg);
 
 }

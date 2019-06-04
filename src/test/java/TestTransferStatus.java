@@ -28,6 +28,7 @@ public class TestTransferStatus extends TestBase {
 
         ReqMsg<TransferStatus> reqMsg = new ReqMsg<>();
 
+        //todo 根据自己系统。自己实现。
         String batchNum = certToolV1.batchNumber(configStorage.getSourceCode(), Util.getDateStr(), "1", "1");
         String checkCode = certToolV1.checkCode(Util.toJson(reqMsg.getDataList()));
 

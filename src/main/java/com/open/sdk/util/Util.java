@@ -1,6 +1,7 @@
 package com.open.sdk.util;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import org.cert.open.CertToolV1;
 
@@ -13,7 +14,7 @@ public class Util {
 
     public final static CertToolV1 certToolV1 = new CertToolV1();
 
-    public final static Gson gson = new Gson();
+    public final static Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 
     private final static DateTimeFormatter dateTimeStrFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

@@ -9,6 +9,10 @@ import lombok.Data;
 @Data
 public class Product {
 
+    @SerializedName("version")
+    @Expose
+    public String version;
+
     @SerializedName("sourceCode")
     @Expose
     public String sourceCode;

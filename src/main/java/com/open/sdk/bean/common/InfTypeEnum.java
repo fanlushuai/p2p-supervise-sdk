@@ -2,6 +2,8 @@ package com.open.sdk.bean.common;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Optional;
+
 public enum InfTypeEnum {
 
     @SerializedName("1")
@@ -29,7 +31,16 @@ public enum InfTypeEnum {
     TRANSFER_STATUS("84", "转让状态接口"),
 
     @SerializedName("85")
-    UNDER_TAKE("85", "承接转让接口");
+    UNDER_TAKE("85", "承接转让接口"),
+
+    @SerializedName("86")
+    PRODUCT("86", "产品信息接口"),
+
+    @SerializedName("87")
+    PRODUCT_CONFIG("87", "产品配置接口"),
+
+    @SerializedName("88")
+    PARTICULARS("88", "投资明细接口");
 
     private String value;
 
@@ -38,6 +49,15 @@ public enum InfTypeEnum {
     InfTypeEnum(String value, String remark) {
         this.value = value;
         this.remark = remark;
+    }
+
+    public static Optional<InfTypeEnum> cover(String value) {
+        for (InfTypeEnum infTypeEnum : InfTypeEnum.values()) {
+            if (infTypeEnum.getValue().equals(value)) {
+                return Optional.of(infTypeEnum);
+            }
+        }
+        return Optional.empty();
     }
 
     public String getValue() {

@@ -50,7 +50,7 @@ public class TestUser extends TestBase {
                 .userProvince("-1")
                 .userAddress("-1")
                 .registerDate("-1")
-                .userMail("xxxfasdfsdsd@qq.com")
+//                .userMail("xxxfasdfsdsd@qq.com")
                 .userSex("1")
                 .version(configStorage.getVersion()).bankAccounts(bankAccountList).build();
 
@@ -58,6 +58,7 @@ public class TestUser extends TestBase {
         userList.add(user);
 
         ReqMsg<User> reqMsg = new ReqMsg<>();
+        //todo 根据自己系统。自己实现。
         String batchNum = certToolV1.batchNumber(configStorage.getSourceCode(), Util.getDateStr(), "1", "1");
         String checkCode = certToolV1.checkCode(Util.toJson(reqMsg.getDataList()));
         reqMsg.setParam(configStorage, InfTypeEnum.USER, batchNum, checkCode, userList);

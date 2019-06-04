@@ -13,6 +13,10 @@ public class Transact {
     @Expose
     public String version;
 
+    @SerializedName("version")
+    @Expose
+    public String version;
+
     @SerializedName("transTime")
     @Expose
     public String transTime;

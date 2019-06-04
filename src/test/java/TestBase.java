@@ -32,6 +32,9 @@ public class TestBase {
 
     private String version = "1.5";
 
+
+    
+
     /**
      * 所有的配置就这一个类
      */
