@@ -94,7 +94,8 @@ P2P网贷机构实时数据接入平台 （互联网应急中心）sdk retrofit�
     }
    
   
-    
+    //如果想要动态的注册所有的retrofitService。[参见](https://blog.csdn.net/lanmo555/article/details/50803836)
+
     
     
     
