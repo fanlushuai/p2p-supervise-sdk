@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    timezone: Asia/Shanghai
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.projectlombok:lombok
+    versions:
+    - 1.18.16
+    - 1.18.18
+  - dependency-name: org.junit.vintage:junit-vintage-engine
+    versions:
+    - 5.7.0
+  - dependency-name: org.junit.platform:junit-platform-launcher
+    versions:
+    - 1.7.0
+  - dependency-name: com.squareup.okhttp3:logging-interceptor
+    versions:
+    - 4.9.0
